@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="site">
+  <header class="header-container">
+    {% block header %}
+    {% set navbar = [
+        ("/", "tasks", "Tasks"),
+        ("/submit", "submit", "Submit Flag"),
+        ("https://best-cpp-course-ever.ru/students/" + session.gitlab.username.replace('.', '-'), "repo", "My Repo"),
+        ("https://docs.google.com/spreadsheets/d/19JP0b5PoAWZ6bFq5z1EZKKAme2ZXE2KlG1SDxf5aMF4/edit?usp=sharing", "gdoc", "gdoc"),
+        ("/logout", "logout", "Logout"),
+    ] -%}
+    {% set active_page = active_page|default("tasks") -%}
+    
+    <nav id="navmenu">
+      <ul class="main-menu">
+        {% for href, id, caption in navbar %}
+        <li>
+          <a href="{{ href }}"
+             class="{{ 'current' if id == active_page else '' }}">
+            {{ caption }}
+          </a>
+        </li>
+        {% if not loop.last %}<li>|</li>{% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+    {% endblock %}
+  </header>
+  <main class="main">
+    {% block content %}
+    {% endblock %}
+  </main>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+[Unit]
+Description=Web interface for C++ course
+After=network.target
+
+[Service]
+EnvironmentFile=/opt/ctf/env
+ExecStart=/usr/bin/uwsgi -s /run/uwsgi/ctf.sock --enable-threads --master --need-app --manage-script-name --plugin python3 --pythonpath . --mount /=web:app
+RuntimeDirectory=uwsgi
+WorkingDirectory=/opt/ctf
+Restart=always
+KillSignal=SIGQUIT
+StandardError=syslog
+User=gitlab-www
+Group=gitlab-www
+
+[Install]
+WantedBy=multi-user.target
+

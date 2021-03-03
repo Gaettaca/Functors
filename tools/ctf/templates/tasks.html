@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{% for group in tasks %}
+<div class="group">
+  <div class="group-header">
+    <h1 class="timer">[{{ group.deadline }}] {{ group.name }}</h1>
+  </div>
+  <div class="group-tasks">
+    {% for task in group.tasks %}
+    <a href="{{ base_repo_url }}/{{ task.name }}/">
+      <div class="task {{ 'solved' if task.solved else 'unsolved' }}">
+        <div class="name">{{ task.name }}</div>
+        <div class="score">{{ task.score }}</div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

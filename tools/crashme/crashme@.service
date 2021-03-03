@@ -1,0 +1,13 @@
+[Unit]
+Description=Crashme challanges server
+
+[Service]
+ExecStart=-/opt/crashme/master.py
+StandardInput=socket
+StandardError=socket
+TimeoutStopSec=60
+MemoryLimit=16M
+
+Group=nogroup
+User=nobody
+WorkingDirectory=/opt/crashme

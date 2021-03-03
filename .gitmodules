@@ -1,0 +1,6 @@
+[submodule "private"]
+	path = private
+	url = ../shad-cpp0-private.git
+[submodule "grader"]
+	path = grader
+	url = ../shad-grader.git

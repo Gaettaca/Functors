@@ -1,0 +1,10 @@
+[Unit]
+Description=Socket for crashme challanges
+
+[Socket]
+ListenStream=80
+ListenStream=27015
+Accept=yes
+
+[Install]
+WantedBy=sockets.target

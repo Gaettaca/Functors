@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="signup">
+  <div class="login">
+    <a class="login-button" href="/login">
+      <div class="text">
+        Login
+      </div>
+    </a>
+  </div>
+
+  <div class="or">
+    <div class="text">
+      OR
+    </div>
+  </div>
+
+  <div class="register">
+    <div class="form">
+      <div class="form-header">
+        <h1>Sign Up</h1>
+      </div>
+      <form method="post">
+        {% if error_message %}
+        <div class="form-element form-error">
+          <div class="error-message">{{ error_message }}</div>
+        </div>
+        {% endif %}
+        <div class="form-element">
+          <div class="name">Username:</div>
+          <input type="text" name="username">
+        </div>
+        <div class="form-element">
+          <div class="name">First Name:</div>
+          <input type="text" name="firstname">
+        </div>
+        <div class="form-element">
+          <div class="name">Last Name:</div>
+          <input type="text" name="lastname">
+        </div>
+        <div class="form-element">
+          <div class="name">Email:</div>
+          <input type="text" name="email">
+        </div>
+        <div class="form-element">
+          <div class="name">Password:</div>
+          <input type="password" name="password">
+        </div>
+        <div class="form-element">
+          <div class="name">Secret Code:</div>
+          <input type="text" name="secret">
+        </div>
+        <div class="form-element last">
+          <input type="submit" class="button" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="password">
+    <a href="https://best-cpp-course-ever.ru/users/password/new">Forgot Password?</a>
+  </div>
+</div>
+{% endblock %}

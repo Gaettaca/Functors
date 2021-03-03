@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% set active_page = "submit" %}
+
+{% block content %}
+<div class="flag-submit">
+  <div class="form">
+    <div class="form-header">
+      <h1>Enter Flag</h1>
+    </div>
+    <form method="post">
+      {% if error_message %}
+      <div class="form-element form-error">
+        <div class="error-message">{{ error_message }}</div>
+      </div>
+      {% endif %}
+      <div class="form-element">
+        <input type="text" name="flag">
+      </div>
+      <div class="form-element last">
+        <input type="submit" class="button" value="Submit">
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
