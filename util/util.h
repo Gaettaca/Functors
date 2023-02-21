@@ -29,6 +29,8 @@ public:
         return result;
     }
 
+
+
     std::vector<double> GenRealVector(size_t count, double from, double to) {
         std::uniform_real_distribution<double> dist(from, to);
         std::vector<double> result(count);

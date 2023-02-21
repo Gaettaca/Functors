@@ -29,6 +29,7 @@ include_directories(util)
 
 add_subdirectory(find-last)
 add_subdirectory(local-max)
+add_subdirectory(remove-if)
 add_subdirectory(partition)
 add_subdirectory(fold)
 add_subdirectory(functors)

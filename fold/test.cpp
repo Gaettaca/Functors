@@ -23,11 +23,11 @@ TEST_CASE("Vectors") {
 
 TEST_CASE("SequenceLength") {
     {
-        std::list<int> a{1, 3, -5, 4};
+        std::list<int> a{3, 3, -5, 4, 3};
         int cnt = 0;
         Length f(&cnt);
         Fold(a.begin(), a.end(), 0, f);
-        REQUIRE(4 == cnt);
+        REQUIRE(5 == cnt);
     }
     {
         std::list<std::string> a{"aba", "caba"};
